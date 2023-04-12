@@ -1,4 +1,4 @@
-# software_architect_2023
+# Design Thinking and Software Architecture
 
 
 | Topic | URL |
