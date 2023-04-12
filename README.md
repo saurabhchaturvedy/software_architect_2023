@@ -21,3 +21,4 @@
 | System Design - YouTube Live Stream| https://www.youtube.com/watch?v=S8aSoSQJ4G8|
 | HLD - Writing 1| https://www.youtube.com/watch?v=r6TEO6_XsiM|
 | HLD Design - Best Practices | https://www.youtube.com/watch?v=xAq7Egm_48g|
+| HLD Design - Soda Machine Portfolio |https://users.ece.cmu.edu/~koopman/ece649/project/sodamachine/portfolio/portfolio.html|
