@@ -23,3 +23,4 @@
 | HLD Design - Best Practices | https://www.youtube.com/watch?v=xAq7Egm_48g|
 | HLD Design - Soda Machine Portfolio |https://users.ece.cmu.edu/~koopman/ece649/project/sodamachine/portfolio/portfolio.html|
 | Apache Kafka - Fundamentals | https://kafka.apache.org/documentation/#introduction|
+| Enjoy Algorithms | https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/ |
