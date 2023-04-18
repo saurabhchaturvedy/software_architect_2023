@@ -25,3 +25,4 @@
 | Apache Kafka - Fundamentals | https://kafka.apache.org/documentation/#introduction|
 | Enjoy Algorithms | https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/ |
 | Sequence Diagrams | https://developer.ibm.com/articles/the-sequence-diagram/ |
+| Sequence Diagrams Part - 2 | https://creately.com/guides/sequence-diagram-tutorial/#:~:text=Activation%20Bars&text=It%20is%20used%20to%20indicate,sends%20a%20message%20to%20another. |
