@@ -24,3 +24,4 @@
 | HLD Design - Soda Machine Portfolio |https://users.ece.cmu.edu/~koopman/ece649/project/sodamachine/portfolio/portfolio.html|
 | Apache Kafka - Fundamentals | https://kafka.apache.org/documentation/#introduction|
 | Enjoy Algorithms | https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/ |
+| Sequence Diagrams | https://developer.ibm.com/articles/the-sequence-diagram/ |
