@@ -53,6 +53,84 @@ public class BinaryTree {
     }
 
 
+    public void inorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
+
+    public void inorderIterative(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = root;
+
+        while (!stack.isEmpty() || temp != null) {
+
+            if (temp != null) {
+                stack.push(temp);
+                temp = temp.left;
+            } else {
+
+                temp = stack.pop();
+                System.out.print(temp.data + " ");
+                temp = temp.right;
+            }
+        }
+    }
+
+
+    public void postorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data + " ");
+    }
+
+
+    public void postorderIterative(TreeNode root) {
+
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+
+        while (!stack.empty() || current != null) {
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
+            } else {
+                TreeNode temp = stack.peek().right;
+
+                if (temp == null) {
+                    temp = stack.pop();
+                    System.out.print(temp.data + " ");
+
+                    while (!stack.empty() && temp == stack.peek().right) {
+
+                        temp = stack.pop();
+                        System.out.print(temp.data + " ");
+                    }
+                } else {
+
+                    current = temp;
+                }
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
 
         TreeNode first = new TreeNode(1);
@@ -73,6 +151,18 @@ public class BinaryTree {
         binaryTree.preOrder(first);
         System.out.println();
         binaryTree.preOrderIterative(first);
+
+        System.out.println();
+        binaryTree.inorder(first);
+
+        System.out.println();
+        binaryTree.inorderIterative(first);
+
+        System.out.println();
+        binaryTree.postorder(first);
+
+        System.out.println();
+        binaryTree.postorderIterative(first);
 
     }
 }
