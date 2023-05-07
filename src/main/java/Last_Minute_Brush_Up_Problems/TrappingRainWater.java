@@ -11,7 +11,7 @@ public class TrappingRainWater {
         int totalWater = 0;
         int n = buildings.length;
 
-        for (int i = 0; i < buildings.length; i++) {
+        for (int i = 0; i < n; i++) {
             max = Math.max(max, buildings[i]);
             leftMax[i] = max;
         }
