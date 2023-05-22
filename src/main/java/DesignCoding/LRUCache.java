@@ -67,4 +67,17 @@ public class LRUCache {
         node.next.prev = node;
         head.next = node;
     }
+
+
+    public static void main(String[] args) {
+        LRUCache lruCache = new LRUCache(4);
+        lruCache.put(10,2);
+        lruCache.put(20,4);
+        lruCache.put(30,6);
+        lruCache.put(40,8);
+        lruCache.put(50,9);
+
+        System.out.println(lruCache.tail);
+        System.out.println(lruCache.get(30));
+    }
 }
