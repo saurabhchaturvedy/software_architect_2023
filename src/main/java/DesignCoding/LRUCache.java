@@ -36,7 +36,7 @@ public class LRUCache {
         if (cache.size() == this.capacity) {
             cache.remove(tail.prev.key);
             tail.prev = tail.prev.prev;
-            tail.prev = tail;
+            tail.prev.next = tail;
         }
 
         Node node = new Node(key, value);
