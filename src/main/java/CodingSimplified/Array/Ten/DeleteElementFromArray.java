@@ -12,6 +12,9 @@ public class DeleteElementFromArray {
         System.out.println();
         deleteElementFromArray.deleteElement(arr,18);
         deleteElementFromArray.print(arr);
+        deleteElementFromArray.deleteElementFromPosition(arr,2);
+        System.out.println();
+        deleteElementFromArray.print(arr);
     }
 
 
@@ -57,4 +60,21 @@ public class DeleteElementFromArray {
 
         count--;
     }
+
+
+    public void deleteElementFromPosition(int[]arr,int pos)
+    {
+        if(pos>count-1 || pos<=0)
+        {
+            return;
+        }
+        System.out.println(" count "+count);
+        for(int i=pos-1; i<count-1; i++)
+        {
+            arr[i] = arr[i+1];
+        }
+
+        count--;
+    }
+
 }
