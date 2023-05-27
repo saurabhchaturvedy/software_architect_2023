@@ -7,9 +7,7 @@ public class InsertIntervals {
 
 
     public int[][] insertIntervals(int[][] intervals, int[] newInterval) {
-        if (intervals.length <= 1) {
-            return intervals;
-        }
+
 
         List<int[]> finalIntervals = new ArrayList<>();
         int index = 0;
@@ -40,7 +38,8 @@ public class InsertIntervals {
     public static void main(String[] args) {
 
         // [[1,3],[2,6],[8,10],[15,18]]
-        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        // [[1,2],[3,5],[6,7],[8,10],[12,16]]
+        int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         InsertIntervals insertIntervals = new InsertIntervals();
         int[][] ints = insertIntervals.insertIntervals(intervals, new int[]{4, 8});
 
@@ -49,7 +48,7 @@ public class InsertIntervals {
             for (int y : x) {
                 System.out.print(y);
             }
-            System.out.println("]");
+            System.out.print("]");
         }
     }
 }
