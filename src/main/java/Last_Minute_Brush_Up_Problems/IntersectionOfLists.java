@@ -32,7 +32,7 @@ public class IntersectionOfLists {
             second = second.next;
         }
 
-        // return the intersection point
+        // return the intersection point O(n+m) -> T O(1) -> S
         return first;
     }
 
