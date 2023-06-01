@@ -1,4 +1,4 @@
-package CodingSimplified.Array.Ten;
+package CodingSimplified.Array.A10;
 
 public class InsertElementInArray {
 
