@@ -1,4 +1,4 @@
-package DesignPatterns.Creational.Proxy;
+package DesignPatterns.Structural.Proxy;
 
 import java.util.ArrayList;
 import java.util.List;

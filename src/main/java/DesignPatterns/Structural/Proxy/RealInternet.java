@@ -1,4 +1,4 @@
-package DesignPatterns.Creational.Proxy;
+package DesignPatterns.Structural.Proxy;
 
 class RealInternet implements Internet {
     public void connectTo(String serverHost) {
