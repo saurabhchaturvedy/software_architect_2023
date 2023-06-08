@@ -1,5 +1,8 @@
 package Last_Minute_Brush_Up_Problems;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class InvertBinaryTree {
 
 
@@ -14,6 +17,35 @@ public class InvertBinaryTree {
 
         root.left = right;
         root.right = left;
+
+        return root;
+    }
+
+
+    TreeNode invertIterative(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+
+            TreeNode current = queue.poll();
+
+            TreeNode temp = current.left;
+            current.left = current.right;
+            current.right = temp;
+
+            if (current.left != null) {
+                queue.offer(current.left);
+            }
+
+            if (current.right != null) {
+                queue.offer(current.right);
+            }
+        }
 
         return root;
     }
@@ -43,6 +75,11 @@ public class InvertBinaryTree {
         TreeNode treeNode = invertBinaryTree.invertRecursive(root);
 
         invertBinaryTree.print(treeNode);
+
+        TreeNode treeNode1 = invertBinaryTree.invertIterative(root);
+
+        System.out.println();
+        invertBinaryTree.print(treeNode1);
 
 
     }
