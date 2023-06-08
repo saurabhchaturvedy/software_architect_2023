@@ -10,6 +10,9 @@ public class FindAllAnagramsInAString {
         int m = str.length();
         int n = input.length();
 
+        if (input.length() > str.length()) {
+            return new ArrayList<>();
+        }
 
         int[] countArray = new int[26];
 
