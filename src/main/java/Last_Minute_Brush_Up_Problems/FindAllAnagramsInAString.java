@@ -11,7 +11,7 @@ public class FindAllAnagramsInAString {
         int n = input.length();
 
 
-        int[] countArray = new int[25];
+        int[] countArray = new int[26];
 
         // check for initial window
 
