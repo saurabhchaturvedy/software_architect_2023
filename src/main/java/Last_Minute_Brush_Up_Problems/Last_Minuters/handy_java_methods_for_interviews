@@ -1,0 +1,52 @@
+Sorting:
+
+Arrays.sort(arr): Sorts an array in ascending order.
+Arrays.sort(arr, Comparator): Sorts an array using a custom comparator.
+Collections.sort(list): Sorts a list in ascending order.
+Searching:
+
+Arrays.binarySearch(arr, key): Searches for a key in a sorted array using binary search.
+String Manipulation:
+
+str.charAt(index): Returns the character at the specified index in a string.
+str.substring(start, end): Extracts a substring from a string.
+str.split(regex): Splits a string into an array of substrings based on a regular expression.
+str.trim(): Removes leading and trailing whitespace from a string.
+str.indexOf(substring): Returns the index of the first occurrence of a substring.
+List Manipulation:
+
+list.add(element): Adds an element to the end of a list.
+list.remove(index): Removes the element at the specified index from a list.
+list.get(index): Retrieves the element at the specified index from a list.
+list.size(): Returns the number of elements in a list.
+Map Manipulation:
+
+map.put(key, value): Adds a key-value pair to a map.
+map.get(key): Retrieves the value associated with a key from a map.
+map.containsKey(key): Checks if a map contains a specific key.
+map.keySet(): Returns a set of all keys in a map.
+Math Operations:
+
+Math.max(a, b): Returns the maximum of two values.
+Math.min(a, b): Returns the minimum of two values.
+Math.abs(num): Returns the absolute value of a number.
+Math.pow(base, exponent): Returns the result of raising a base to an exponent.
+Input/Output:
+
+Scanner: Read input from the console or other sources.
+BufferedReader: Read input using buffered input streams.
+System.out.println(str): Print a string to the console.
+Data Structures:
+
+ArrayList: Dynamic array implementation.
+LinkedList: Doubly linked list implementation.
+HashMap: Hash table implementation for key-value pairs.
+HashSet: Implementation of a set using a hash table.
+Conversion:
+
+Integer.parseInt(str): Converts a string to an integer.
+String.valueOf(obj): Converts an object to a string.
+Character.isDigit(char): Checks if a character is a digit.
+Error Handling:
+
+try-catch blocks: Handle exceptions gracefully.
