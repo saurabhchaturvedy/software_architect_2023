@@ -36,12 +36,12 @@ public class TopKFrequentElement {
                     res[count++] = bucket[i].get(j);
                 }
 
-                if (count == k) {
-                    break;
-                }
+
             }
 
-
+            if (count == k) {
+                break;
+            }
         }
 
         return res;
