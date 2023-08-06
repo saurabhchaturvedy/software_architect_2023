@@ -1,4 +1,4 @@
-package Last_Minute_Brush_Up_Problems;
+package Last_Minute_Brush_Up_Problems.Codebix;
 
 public class FindMinimumRotatedSortedArray {
 
