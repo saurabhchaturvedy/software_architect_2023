@@ -1,0 +1,48 @@
+Filtering:
+
+.filter(Predicate): Filters elements based on a given condition.
+.distinct(): Removes duplicate elements from the stream.
+Mapping:
+
+.map(Function): Transforms each element in the stream using a function.
+.flatMap(Function): Transforms each element in the stream and flattens nested streams.
+Limiting and Skipping:
+
+.limit(n): Limits the stream to the first n elements.
+.skip(n): Skips the first n elements in the stream.
+Sorting:
+
+.sorted(): Sorts elements in natural order.
+.sorted(Comparator): Sorts elements using a custom comparator.
+Reducing:
+
+.reduce(identity, BinaryOperator): Combines elements using a binary operator, with an initial identity value.
+Aggregating:
+
+.count(): Returns the number of elements in the stream.
+.min(Comparator) and .max(Comparator): Finds the minimum and maximum elements using a comparator.
+Collecting:
+
+.collect(Collectors.toList()): Collects stream elements into a list.
+.collect(Collectors.toSet()): Collects stream elements into a set.
+.collect(Collectors.toMap(keyMapper, valueMapper)): Collects stream elements into a map.
+Grouping and Partitioning:
+
+.collect(Collectors.groupingBy(classifier)): Groups elements based on a classifier function.
+.collect(Collectors.partitioningBy(predicate)): Partitions elements based on a predicate.
+Joining:
+
+.collect(Collectors.joining(delimiter)): Joins stream elements into a single string with a delimiter.
+Matching:
+
+.allMatch(Predicate): Checks if all elements match a given condition.
+.anyMatch(Predicate): Checks if any element matches a given condition.
+.noneMatch(Predicate): Checks if no element matches a given condition.
+Iterating:
+
+.forEach(Consumer): Applies a consumer function to each element in the stream.
+Generating Streams:
+
+Stream.of(T...): Creates a stream from a list of elements.
+Stream.iterate(initial, UnaryOperator): Generates an infinite stream by applying a function repeatedly.
+Stream.generate(Supplier): Generates an infinite stream by repeatedly supplying values from a supplier.
