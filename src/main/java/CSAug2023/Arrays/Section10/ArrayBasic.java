@@ -18,7 +18,7 @@ public class ArrayBasic {
             arr[i] = arr[i - 1];
         }
 
-        arr[0] = val;
+        arr[position-1] = val;
     }
 
 
@@ -33,7 +33,7 @@ public class ArrayBasic {
         }
 
         arrayBasic.insertAtPosition(arr,33,4);
-
+        System.out.println();
         for (int x : arr) {
             System.out.print(x + " ");
         }
