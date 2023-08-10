@@ -1,5 +1,6 @@
 package CSAug2023.Arrays.Section40;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class TripletsLessThanTargetSum {
@@ -7,6 +8,7 @@ public class TripletsLessThanTargetSum {
 
     public int tripletsLessThanTargetSum(int[] arr, int targetSum) {
 
+        Arrays.sort(arr);
         int tripletSumCount = 0;
 
         for (int i = 0; i < arr.length - 2; i++) {
