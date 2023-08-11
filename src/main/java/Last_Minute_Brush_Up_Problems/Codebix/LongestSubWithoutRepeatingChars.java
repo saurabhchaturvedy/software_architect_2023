@@ -10,22 +10,22 @@ public class LongestSubWithoutRepeatingChars {
 
         Set<Character> set = new HashSet<>();
         int leftIndex = 0;
-        int currIndex = 0;
+        int rightIndex = 0;
         int maxLength = 0;
 
-        int strLength = str.length();
+
         char[] window = str.toCharArray();
 
-        while (currIndex < strLength) {
+        while (rightIndex < str.length()) {
 
-            if (!set.contains(window[currIndex])) {
-                set.add(window[currIndex]);
-                currIndex++;
-                maxLength = Math.max(maxLength, currIndex - leftIndex);
+            if (!set.contains(window[rightIndex])) {
+                set.add(window[rightIndex]);
+                rightIndex++;
+                maxLength = Math.max(maxLength, rightIndex - leftIndex);
 
             } else {
 
-                set.remove(window[currIndex]);
+                set.remove(window[rightIndex]);
                 leftIndex++;
             }
         }
