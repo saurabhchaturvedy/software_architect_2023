@@ -1,8 +1,8 @@
-package CSAug2023.BinaryTree.Section10;
+package CSAug2023.BinaryTree.Section20;
 
 import CSAug2023.BinaryTree.TreeNode;
 
-public class LevelOrderRecursive {
+public class ReverseOrderTraversal {
 
 
     public int height(TreeNode root) {
@@ -18,6 +18,7 @@ public class LevelOrderRecursive {
 
 
     public void printNodesAtALevel(TreeNode root, int level) {
+
         if (root == null) {
             return;
         }
@@ -29,27 +30,31 @@ public class LevelOrderRecursive {
 
         printNodesAtALevel(root.left, level - 1);
         printNodesAtALevel(root.right, level - 1);
-
     }
 
 
-    public void levelOrderRecursive(TreeNode root) {
+    public void reverseOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
 
 
         int height = height(root);
 
-        for (int i = 0; i <= height; i++) {
+        for (int i = height; i >= 0; i--) {
             printNodesAtALevel(root, i + 1);
+            System.out.println();
         }
     }
 
+
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(50);
-        root.left = new TreeNode(60);
-        root.right = new TreeNode(80);
+        TreeNode root = new TreeNode(40);
+        root.left = new TreeNode(80);
+        root.right = new TreeNode(100);
 
-        LevelOrderRecursive levelOrderRecursive = new LevelOrderRecursive();
-        levelOrderRecursive.levelOrderRecursive(root);
+        ReverseOrderTraversal reverseOrderTraversal = new ReverseOrderTraversal();
+        reverseOrderTraversal.reverseOrderTraversal(root);
     }
 }

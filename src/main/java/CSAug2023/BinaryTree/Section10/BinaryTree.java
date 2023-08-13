@@ -1,6 +1,8 @@
 package CSAug2023.BinaryTree.Section10;
 
 
+import CSAug2023.BinaryTree.TreeNode;
+
 public class BinaryTree {
 
 
