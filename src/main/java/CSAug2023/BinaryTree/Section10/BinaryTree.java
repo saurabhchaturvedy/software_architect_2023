@@ -1,4 +1,4 @@
-package CSAug2023.BinaryTree;
+package CSAug2023.BinaryTree.Section10;
 
 
 public class BinaryTree {

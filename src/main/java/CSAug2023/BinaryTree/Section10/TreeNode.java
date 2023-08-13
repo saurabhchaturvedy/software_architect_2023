@@ -1,6 +1,4 @@
-package CSAug2023.BinaryTree;
-
-import Last_Minute_Brush_Up_Problems.ListNode;
+package CSAug2023.BinaryTree.Section10;
 
 public class TreeNode {
 
