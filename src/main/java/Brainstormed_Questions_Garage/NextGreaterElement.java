@@ -1,5 +1,6 @@
 package Brainstormed_Questions_Garage;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class NextGreaterElement {
@@ -7,23 +8,17 @@ public class NextGreaterElement {
 
     public int[] nextGreaterElement(int[] arr) {
 
-
-        int[] result = new int[arr.length];
         Stack<Integer> stack = new Stack<>();
+        int[] result = new int[arr.length];
+        Arrays.fill(result, -1);
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
 
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (!stack.isEmpty()) {
-
-                while (!stack.isEmpty() && stack.peek() <= arr[i]) {
-                    stack.pop();
-                }
+            while (!stack.isEmpty() && stack.peek() < arr[i]) {
+                stack.pop();
+                result[count++] = arr[i];
             }
 
-            if (stack.isEmpty()) {
-                result[i] = -1;
-            } else {
-                result[i] = stack.peek();
-            }
 
             stack.push(arr[i]);
         }
