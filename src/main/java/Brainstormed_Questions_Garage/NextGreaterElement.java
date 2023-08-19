@@ -15,18 +15,21 @@ public class NextGreaterElement {
                 stack.pop();
             }
 
-            stack.push(arr[i]);
 
             int res = stack.empty() ? -1 : stack.peek();
+            stack.push(arr[i]);
 
-            System.out.print(res + " ");
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
         }
     }
 
 
     public static void main(String[] args) {
 
-        int[]arr = {5,15,10,8,6,12,9,18};
+        int[] arr = {5, 15, 10, 8, 6, 12, 9, 18};
         NextGreaterElement nextGreaterElement = new NextGreaterElement();
         nextGreaterElement.nextGreaterElement(arr);
     }
