@@ -34,6 +34,68 @@ public class BinaryTreeFromTraversalOrder {
         return root;
     }
 
+
+    public static TreeNode buildTreeFromPreOrder(int[] preorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = new TreeNode(preorder[0]);
+        stack.push(root);
+
+        for (int i = 1; i < preorder.length; i++) {
+            TreeNode newNode = new TreeNode(preorder[i]);
+            TreeNode current = stack.peek();
+
+            if (newNode.data < current.data) {
+                current.left = newNode;
+            } else {
+                TreeNode parent = null;
+                while (!stack.isEmpty() && stack.peek().data < newNode.data) {
+                    parent = stack.pop();
+                }
+                parent.right = newNode;
+            }
+
+            stack.push(newNode);
+        }
+
+        return root;
+    }
+
+
+    public static TreeNode buildTreeFromPostorder(int[] postorder) {
+        if (postorder == null || postorder.length == 0) {
+            return null;
+        }
+
+        int n = postorder.length;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = new TreeNode(postorder[n - 1]);
+        stack.push(root);
+
+        for (int i = n - 2; i >= 0; i--) {
+            TreeNode newNode = new TreeNode(postorder[i]);
+            TreeNode current = null;
+
+            while (!stack.isEmpty() && stack.peek().data > newNode.data) {
+                current = stack.pop();
+            }
+
+            if (current != null) {
+                current.left = newNode;
+            } else {
+                stack.peek().right = newNode;
+            }
+
+            stack.push(newNode);
+        }
+
+        return root;
+    }
+
+
     public static void inorderTraversal(TreeNode root) {
         if (root == null) {
             return;
