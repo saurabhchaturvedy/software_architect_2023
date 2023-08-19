@@ -14,13 +14,13 @@ public class NextGreaterElement {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
 
-            while (!stack.isEmpty() && stack.peek() < arr[i]) {
-                stack.pop();
-                result[count++] = arr[i];
+            while (!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
+
+                result[stack.pop()] = arr[i];
             }
 
 
-            stack.push(arr[i]);
+            stack.push(i);
         }
 
         return result;
