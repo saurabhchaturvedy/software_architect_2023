@@ -16,7 +16,7 @@ public class AreMirrorTrees {
         }
 
 
-        return root1.data == root2.data && areMirrorTrees(root1.left, root1.right) && areMirrorTrees(root2.right, root2.left);
+        return root1.data == root2.data && areMirrorTrees(root1.left, root2.right) && areMirrorTrees(root1.right, root2.left);
     }
 
 
