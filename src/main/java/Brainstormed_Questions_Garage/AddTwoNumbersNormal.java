@@ -6,12 +6,12 @@ public class AddTwoNumbersNormal {
     public ListNode addTwoNumbers(ListNode first, ListNode second) {
 
         ListNode fakeHead = new ListNode(0);
-        ListNode p1 = first;
-        ListNode p2 = second;
+        ListNode p1 = reverse(first);
+        ListNode p2 = reverse(second);
         ListNode current = fakeHead;
         int carry = 0;
 
-        while (p1 != null || p2 != null || carry != 0) {
+        while (p1 != null || p2 != null) {
 
             int x = (p1 != null) ? p1.data : 0;
             int y = (p2 != null) ? p2.data : 0;
@@ -31,7 +31,11 @@ public class AddTwoNumbersNormal {
             }
         }
 
-        return fakeHead.next;
+        if (carry > 0) {
+            current.next = new ListNode(carry);
+        }
+
+        return reverse(fakeHead.next);
     }
 
 
@@ -49,6 +53,28 @@ public class AddTwoNumbersNormal {
         }
     }
 
+
+    public ListNode reverse(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+
+        while (current != null) {
+
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        return previous;
+    }
+
     public static void main(String[] args) {
 
         ListNode head1 = new ListNode(1);
@@ -60,7 +86,7 @@ public class AddTwoNumbersNormal {
 
         ListNode head2 = new ListNode(5);
         ListNode fourth = new ListNode(9);
-        ListNode fifth = new ListNode( 1);
+        ListNode fifth = new ListNode(1);
 
         head2.next = fourth;
         fourth.next = fifth;
