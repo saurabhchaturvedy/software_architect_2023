@@ -3,7 +3,7 @@ package TechInt;
 public class CallMe {
 
 
-    public void Call(String msg) {
+    public void Call(String msg) { // you can use synchronized keyword in the method signature to synchronize
 
         System.out.print("[" + msg);
         try {

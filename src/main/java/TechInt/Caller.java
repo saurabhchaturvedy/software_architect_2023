@@ -19,7 +19,9 @@ public class Caller implements Runnable {
 
     @Override
     public void run() {
-
-        target.Call(msg);
+// you can use synchronized block to synchronize access to the Call method of an instance of Callme object
+        synchronized (target) {
+            target.Call(msg);
+        }
     }
 }
