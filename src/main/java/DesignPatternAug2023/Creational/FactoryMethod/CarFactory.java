@@ -1,4 +1,4 @@
-package DesignPatternAug2023.FactoryMethod;
+package DesignPatternAug2023.Creational.FactoryMethod;
 
 public class CarFactory extends TransportFactory {
     @Override
