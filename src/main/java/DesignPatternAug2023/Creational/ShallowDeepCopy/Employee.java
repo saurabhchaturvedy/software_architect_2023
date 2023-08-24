@@ -16,6 +16,17 @@ public class Employee implements Cloneable {
         this.employeeAddress = employeeAddress;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setEmployeeAddress(EmployeeAddress employeeAddress) {
+        this.employeeAddress = employeeAddress;
+    }
 
     public String toString() {
         return " Name : " + name + " Age : " + age + " Address : " + employeeAddress;
@@ -36,8 +47,16 @@ public class Employee implements Cloneable {
     }
 
 
+//    public Object clone() throws CloneNotSupportedException {
+//        return super.clone();
+//    }
+
+
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        Employee employee = new Employee(this.name, this.age, this.employeeAddress);
+        EmployeeAddress employeeAddress1 = new EmployeeAddress(this.employeeAddress.houseNo, this.employeeAddress.streeName, this.employeeAddress.city);
+        employee.setEmployeeAddress(employeeAddress1);
+        return employee;
     }
 
 }
