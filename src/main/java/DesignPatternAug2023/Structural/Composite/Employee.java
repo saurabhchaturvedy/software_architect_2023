@@ -1,4 +1,4 @@
-package DesignPatternAug2023.Composite;
+package DesignPatternAug2023.Structural.Composite;
 
 import java.util.ArrayList;
 import java.util.List;
