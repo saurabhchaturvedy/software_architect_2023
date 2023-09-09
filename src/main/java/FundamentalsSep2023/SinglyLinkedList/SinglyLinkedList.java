@@ -62,6 +62,93 @@ public class SinglyLinkedList {
     }
 
 
+    public ListNode insertAtPosition(ListNode head, int position, int data) {
+
+        ListNode newNode = new ListNode(data);
+
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+
+        ListNode current = head;
+        int count = 1;
+
+        while (count < position - 1) {
+            count++;
+            current = current.next;
+        }
+
+        ListNode temp = current.next;
+        newNode.next = temp;
+        current.next = newNode;
+
+
+        return head;
+    }
+
+
+    public ListNode deleteFirst(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode temp = head;
+        head = head.next;
+        temp.next = null;
+
+        return head;
+    }
+
+
+    public ListNode deleteLast(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode previous = null;
+
+        while (current.next != null) {
+            previous = current;
+            current = current.next;
+        }
+
+        previous.next = null;
+        return head;
+    }
+
+
+    public ListNode deleteFromPosition(ListNode head, int position) {
+        if (position == 0 && (head == null || head.next == null)) {
+            return head;
+        }
+
+        if (position == 0) {
+            ListNode temp = head;
+            head = head.next;
+            temp.next = null;
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode previous = null;
+        int count = 0;
+
+        while (count < position - 1) {
+            count++;
+            previous = current;
+            current = current.next;
+        }
+
+        ListNode temp = current.next;
+        previous.next = temp;
+        temp.next = null;
+        return head;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -86,5 +173,33 @@ public class SinglyLinkedList {
 
         System.out.println();
         singlyLinkedList.print(lastNode);
+
+        System.out.println();
+
+        ListNode nodeInBetween = singlyLinkedList.insertAtPosition(lastNode, 4, 4000);
+
+        singlyLinkedList.print(nodeInBetween);
+
+        ListNode deletedFirstNode = singlyLinkedList.deleteFirst(nodeInBetween);
+
+        System.out.println();
+
+        System.out.println("Linked list after deletion ::::");
+        singlyLinkedList.print(deletedFirstNode);
+
+
+        singlyLinkedList.deleteLast(deletedFirstNode);
+
+        System.out.println();
+
+        singlyLinkedList.print(deletedFirstNode);
+
+
+        ListNode deletedFromPosition = singlyLinkedList.deleteFromPosition(deletedFirstNode, 3);
+
+        System.out.println();
+
+        singlyLinkedList.print(deletedFromPosition);
+
     }
 }
