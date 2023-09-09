@@ -149,6 +149,25 @@ public class SinglyLinkedList {
     }
 
 
+    public boolean search(ListNode head, int data) {
+        if (head == null) {
+            return false;
+        }
+
+        ListNode current = head;
+
+        while (current != null) {
+            if (current.data == data) {
+                return true;
+            }
+
+            current = current.next;
+        }
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -200,6 +219,9 @@ public class SinglyLinkedList {
         System.out.println();
 
         singlyLinkedList.print(deletedFromPosition);
+
+
+        System.out.println(" Is element present ? :::: "+singlyLinkedList.search(deletedFirstNode,20));
 
     }
 }
