@@ -168,6 +168,43 @@ public class SinglyLinkedList {
     }
 
 
+    public ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        return previous;
+    }
+
+
+    public ListNode middleNode(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+
+        while (fastPtr != null && fastPtr.next != null) {
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+        }
+
+        return slowPtr;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -179,7 +216,7 @@ public class SinglyLinkedList {
 
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.print(head);
-
+        System.out.println("Middle node is = " + singlyLinkedList.middleNode(head).data);
         System.out.println();
 
         System.out.println("Length of the linked list is ::: " + singlyLinkedList.length(head));
@@ -221,7 +258,19 @@ public class SinglyLinkedList {
         singlyLinkedList.print(deletedFromPosition);
 
 
-        System.out.println(" Is element present ? :::: "+singlyLinkedList.search(deletedFirstNode,20));
+        System.out.println(" Is element present ? :::: " + singlyLinkedList.search(deletedFirstNode, 20));
+
+
+        ListNode reverse = singlyLinkedList.reverse(head);
+
+        System.out.println();
+
+        System.out.println("Linked list after reversing ::: ");
+
+        singlyLinkedList.print(reverse);
+
+        System.out.println();
+
 
     }
 }
