@@ -205,6 +205,35 @@ public class SinglyLinkedList {
     }
 
 
+    public ListNode getNthNodeFromEnd(ListNode head, int n) {
+        if (head == null) {
+            return null;
+        }
+
+        if (n <= 0) {
+            throw new IllegalArgumentException("Invalid value");
+        }
+
+        ListNode refPtr = head;
+        ListNode mainPtr = head;
+
+        int count = 0;
+
+        while (count < n) {
+
+            refPtr = refPtr.next;
+            count++;
+        }
+
+        while (refPtr != null) {
+            refPtr = refPtr.next;
+            mainPtr = mainPtr.next;
+        }
+
+        return mainPtr;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -272,5 +301,6 @@ public class SinglyLinkedList {
         System.out.println();
 
 
+        System.out.println("2nd node from the end :::: "+singlyLinkedList.getNthNodeFromEnd(nodeInBetween,1).data);
     }
 }
