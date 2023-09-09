@@ -234,6 +234,28 @@ public class SinglyLinkedList {
     }
 
 
+    public boolean hasLoop(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+
+
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+
+        while (fastPtr != null && fastPtr.next != null) {
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+
+            if (slowPtr == fastPtr) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -301,6 +323,6 @@ public class SinglyLinkedList {
         System.out.println();
 
 
-        System.out.println("2nd node from the end :::: "+singlyLinkedList.getNthNodeFromEnd(nodeInBetween,1).data);
+        System.out.println("2nd node from the end :::: " + singlyLinkedList.getNthNodeFromEnd(head, 1).data);
     }
 }
