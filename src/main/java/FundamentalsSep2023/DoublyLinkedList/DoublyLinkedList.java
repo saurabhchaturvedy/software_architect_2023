@@ -260,7 +260,7 @@ public class DoublyLinkedList {
         System.out.println();
         doublyLinkedList.printForward();
 
-        doublyLinkedList.deleteAtIndex(3);
+      doublyLinkedList.deleteAtIndex(3);
 
         System.out.println();
 
