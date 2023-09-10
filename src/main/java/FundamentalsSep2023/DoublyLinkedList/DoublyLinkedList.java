@@ -138,6 +138,7 @@ public class DoublyLinkedList {
         }
 
         head = head.next;
+        length--;
 
     }
 
@@ -157,6 +158,7 @@ public class DoublyLinkedList {
         }
 
         tail = tail.previous;
+        length--;
     }
 
 
