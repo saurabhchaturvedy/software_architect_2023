@@ -62,6 +62,19 @@ public class CircularLinkedList {
     }
 
 
+    public void addAtFront(int data) {
+        ListNode newNode = new ListNode(data);
+        if (last == null) {
+            last = newNode;
+        } else {
+
+            ListNode temp = last.next;
+            last.next = newNode;
+            newNode.next = temp;
+        }
+    }
+
+
     public static void main(String[] args) {
 
 
@@ -73,6 +86,12 @@ public class CircularLinkedList {
 
         System.out.println();
 
-        System.out.println("Length of circular linked list is :::: "+circularLinkedList.length());
+        System.out.println("Length of circular linked list is :::: " + circularLinkedList.length());
+
+        System.out.println();
+
+        circularLinkedList.addAtFront(56);
+
+        circularLinkedList.print();
     }
 }
