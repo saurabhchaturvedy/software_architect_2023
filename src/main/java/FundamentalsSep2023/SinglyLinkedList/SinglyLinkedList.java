@@ -256,6 +256,31 @@ public class SinglyLinkedList {
     }
 
 
+    public ListNode deleteNode(ListNode head, int data) {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.data == data) {
+            return head.next;
+        }
+
+        ListNode current = head;
+
+
+        while (current != null) {
+            if (current.next.data == data) {
+                current = current.next.next;
+                return head;
+            }
+
+            current = current.next;
+        }
+
+        return head;
+    }
+
+
     public static void main(String[] args) {
 
         ListNode head = new ListNode(10);
@@ -324,5 +349,18 @@ public class SinglyLinkedList {
 
 
         System.out.println("2nd node from the end :::: " + singlyLinkedList.getNthNodeFromEnd(head, 1).data);
+
+
+        ListNode head2 = new ListNode(10);
+        ListNode second2 = new ListNode(20);
+        ListNode third2 = new ListNode(30);
+
+        head2.next = second2;
+        second2.next = third2;
+
+        ListNode listNode = singlyLinkedList.deleteNode(head2, 10);
+
+        System.out.println("After deletion");
+        singlyLinkedList.print(listNode);
     }
 }
