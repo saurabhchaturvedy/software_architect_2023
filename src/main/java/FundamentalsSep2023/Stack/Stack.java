@@ -2,10 +2,10 @@ package FundamentalsSep2023.Stack;
 
 import java.util.EmptyStackException;
 
-public class Stack {
+public class Stack<T> {
 
 
-    ListNode top;
+    ListNode<T> top;
     int length;
 
 
@@ -14,11 +14,11 @@ public class Stack {
         this.length = 0;
     }
 
-    private static class ListNode {
-        int data;
+    private static class ListNode<T> {
+        T data;
         ListNode next;
 
-        ListNode(int data) {
+        ListNode(T data) {
             this.data = data;
         }
     }
@@ -43,13 +43,13 @@ public class Stack {
     }
 
 
-    public int pop() {
+    public T pop() {
 
         if (isEmpty()) {
             throw new EmptyStackException();
         }
 
-        int result = top.data;
+        T result = top.data;
 
         top = top.next;
         length--;
@@ -76,7 +76,7 @@ public class Stack {
 
     public static void main(String[] args) {
 
-        Stack stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
 
         stack.push(13);
         stack.push(20);
