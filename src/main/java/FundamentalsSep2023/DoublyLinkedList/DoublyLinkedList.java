@@ -94,6 +94,35 @@ public class DoublyLinkedList {
     }
 
 
+    public void insertAtIndex(int index, int data) {
+
+        if (index < 0 || index > length) {
+            return;
+        }
+
+        if (index == 0) {
+            addToFront(data);
+        }
+
+        if (index == length) {
+            addToLast(data);
+        }
+
+        ListNode current = head;
+
+        for (int i = 0; i < index - 1; i++) {
+            current = current.next;
+        }
+
+        ListNode newNode = new ListNode(data);
+        ListNode temp = current.next;
+        current.next = newNode;
+        newNode.previous = current;
+        newNode.next = temp;
+        temp.previous = newNode;
+    }
+
+
     public static void main(String[] args) {
 
 
@@ -140,5 +169,12 @@ public class DoublyLinkedList {
         System.out.println();
 
         doublyLinkedList.printForward();
+
+        doublyLinkedList.insertAtIndex(2, 400);
+
+        System.out.println();
+
+        doublyLinkedList.printForward();
+
     }
 }
