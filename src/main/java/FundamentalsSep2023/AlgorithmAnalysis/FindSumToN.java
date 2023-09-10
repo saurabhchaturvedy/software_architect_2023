@@ -1,4 +1,4 @@
-package AlgorithmAnalysis;
+package FundamentalsSep2023.AlgorithmAnalysis;
 
 public class FindSumToN {
 
