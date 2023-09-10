@@ -29,7 +29,7 @@ public class DoublyLinkedList {
     }
 
 
-    public void printForward(ListNode head) {
+    public void printForward() {
         if (head == null) {
             return;
         }
@@ -46,7 +46,7 @@ public class DoublyLinkedList {
     }
 
 
-    public void printBackward(ListNode head) {
+    public void printBackward() {
         if (head == null) {
             return;
         }
@@ -66,7 +66,7 @@ public class DoublyLinkedList {
     public void addToFront(int data) {
         ListNode newNode = new ListNode(data);
 
-        if (isEmpty()) {
+        if (head == null) {
             tail = newNode;
         } else {
 
@@ -89,25 +89,26 @@ public class DoublyLinkedList {
         ListNode fifth = new ListNode(24);
 
 
-        head.next = second;
-        second.previous = head;
-
-        second.next = third;
-        third.previous = second;
-
-        third.next = fourth;
-        fourth.previous = third;
-
-        fourth.next = fifth;
-        fifth.previous = fourth;
+//        head.next = second;
+//        second.previous = head;
+//
+//        second.next = third;
+//        third.previous = second;
+//
+//        third.next = fourth;
+//        fourth.previous = third;
+//
+//        fourth.next = fifth;
+//        fifth.previous = fourth;
 
 
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
-        doublyLinkedList.printForward(head);
+        //doublyLinkedList.printForward(head);
 
-        doublyLinkedList.tail = fifth;
+        doublyLinkedList.addToFront(10);
+        doublyLinkedList.addToFront(20);
         System.out.println();
-        doublyLinkedList.printBackward(fifth);
+        doublyLinkedList.printBackward();
 
         System.out.println();
 
@@ -115,6 +116,6 @@ public class DoublyLinkedList {
 
         System.out.println();
 
-        doublyLinkedList.printForward(head);
+        doublyLinkedList.printForward();
     }
 }
