@@ -89,6 +89,20 @@ public class CircularLinkedList {
         }
     }
 
+    public void removeFirst() {
+        if (last.next == last) {
+            last = null;
+        }
+
+
+        if (last == null) {
+            return;
+        } else {
+
+            last.next = last.next.next;
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -112,6 +126,12 @@ public class CircularLinkedList {
         System.out.println();
 
         circularLinkedList.addAtLast(33);
+
+        circularLinkedList.print();
+
+        circularLinkedList.removeFirst();
+
+        System.out.println();
 
         circularLinkedList.print();
     }
