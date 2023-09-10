@@ -58,7 +58,7 @@ public class Queue {
         if (front == null) {
             rear = null;
         }
-
+        length--;
         return result;
     }
 
@@ -94,6 +94,8 @@ public class Queue {
         queue.dequeue();
 
         queue.print();
+
+        System.out.println("Length of the queue is :::: "+queue.length());
 
 
     }
