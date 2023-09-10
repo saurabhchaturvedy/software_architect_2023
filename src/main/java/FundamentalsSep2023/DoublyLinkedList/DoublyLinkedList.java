@@ -63,6 +63,22 @@ public class DoublyLinkedList {
     }
 
 
+    public void addToFront(int data) {
+        ListNode newNode = new ListNode(data);
+
+        if (isEmpty()) {
+            tail = newNode;
+        } else {
+
+            head.previous = newNode;
+        }
+
+        newNode.next = head;
+        head = newNode;
+        length++;
+    }
+
+
     public static void main(String[] args) {
 
 
@@ -92,5 +108,13 @@ public class DoublyLinkedList {
         doublyLinkedList.tail = fifth;
         System.out.println();
         doublyLinkedList.printBackward(fifth);
+
+        System.out.println();
+
+        doublyLinkedList.addToFront(89);
+
+        System.out.println();
+
+        doublyLinkedList.printForward(head);
     }
 }
