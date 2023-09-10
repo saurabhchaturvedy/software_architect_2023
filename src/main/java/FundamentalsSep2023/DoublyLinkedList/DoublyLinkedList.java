@@ -123,6 +123,43 @@ public class DoublyLinkedList {
     }
 
 
+    public void deleteFirst() {
+
+        if (head == null) {
+            return;
+        }
+
+
+        if (head == tail) {
+            tail = null;
+        } else {
+
+            head.next.previous = null;
+        }
+
+        head = head.next;
+
+    }
+
+
+    public void deleteLast() {
+
+        if (head == null) {
+            return;
+        }
+
+
+        if (head == tail) {
+            head = null;
+        } else {
+
+            tail.previous.next = null;
+        }
+
+        tail = tail.previous;
+    }
+
+
     public static void main(String[] args) {
 
 
@@ -173,6 +210,18 @@ public class DoublyLinkedList {
         doublyLinkedList.insertAtIndex(2, 400);
 
         System.out.println();
+
+        doublyLinkedList.printForward();
+
+        System.out.println();
+
+        doublyLinkedList.deleteFirst();
+
+        doublyLinkedList.printForward();
+
+        System.out.println();
+
+        doublyLinkedList.deleteLast();
 
         doublyLinkedList.printForward();
 
