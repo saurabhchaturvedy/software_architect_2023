@@ -74,6 +74,21 @@ public class CircularLinkedList {
         }
     }
 
+    public void addAtLast(int data) {
+        ListNode newNode = new ListNode(data);
+
+        if (last == null) {
+            last = newNode;
+            last.next = last;
+        } else {
+
+            ListNode first = last.next;
+            last.next = newNode;
+            newNode.next = first;
+            last = newNode;
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -91,6 +106,12 @@ public class CircularLinkedList {
         System.out.println();
 
         circularLinkedList.addAtFront(56);
+
+        circularLinkedList.print();
+
+        System.out.println();
+
+        circularLinkedList.addAtLast(33);
 
         circularLinkedList.print();
     }
