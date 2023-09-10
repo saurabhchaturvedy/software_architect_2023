@@ -29,7 +29,68 @@ public class DoublyLinkedList {
     }
 
 
+    public void printForward(ListNode head) {
+        if (head == null) {
+            return;
+        }
+
+
+        ListNode current = head;
+
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+
+        System.out.print(" -> ");
+    }
+
+
+    public void printBackward(ListNode head) {
+        if (head == null) {
+            return;
+        }
+
+
+        ListNode current = tail;
+
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.previous;
+        }
+
+        System.out.print(" -> ");
+    }
+
+
     public static void main(String[] args) {
 
+
+        ListNode head = new ListNode(7);
+        ListNode second = new ListNode(11);
+        ListNode third = new ListNode(18);
+        ListNode fourth = new ListNode(21);
+        ListNode fifth = new ListNode(24);
+
+
+        head.next = second;
+        second.previous = head;
+
+        second.next = third;
+        third.previous = second;
+
+        third.next = fourth;
+        fourth.previous = third;
+
+        fourth.next = fifth;
+        fifth.previous = fourth;
+
+
+        DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+        doublyLinkedList.printForward(head);
+
+        doublyLinkedList.tail = fifth;
+        System.out.println();
+        doublyLinkedList.printBackward(fifth);
     }
 }
