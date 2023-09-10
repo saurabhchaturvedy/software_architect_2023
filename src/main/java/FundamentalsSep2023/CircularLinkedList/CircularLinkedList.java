@@ -27,7 +27,24 @@ public class CircularLinkedList {
             System.out.print(first.data + " -> ");
             first = first.next;
         }
-        //System.out.print(first.data);
+        System.out.print(first.data);
+    }
+
+
+    public int length() {
+        if (last == null) {
+            return 0;
+        }
+
+        ListNode first = last.next;
+        int count = 1;
+
+        while (first != last) {
+            count++;
+            first = first.next;
+        }
+
+        return count;
     }
 
     public void createCircularLinkedList() {
@@ -53,5 +70,9 @@ public class CircularLinkedList {
         circularLinkedList.createCircularLinkedList();
 
         circularLinkedList.print();
+
+        System.out.println();
+
+        System.out.println("Length of circular linked list is :::: "+circularLinkedList.length());
     }
 }
