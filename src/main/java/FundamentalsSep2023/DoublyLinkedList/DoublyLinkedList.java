@@ -79,6 +79,21 @@ public class DoublyLinkedList {
     }
 
 
+    public void addToLast(int data) {
+        ListNode newNode = new ListNode(data);
+
+        if (tail == null) {
+            head = newNode;
+        } else {
+
+            tail.next = newNode;
+            newNode.previous = tail;
+        }
+
+        tail = newNode;
+    }
+
+
     public static void main(String[] args) {
 
 
@@ -113,6 +128,14 @@ public class DoublyLinkedList {
         System.out.println();
 
         doublyLinkedList.addToFront(89);
+
+        System.out.println();
+
+        doublyLinkedList.printForward();
+
+        System.out.println();
+
+        doublyLinkedList.addToLast(8889);
 
         System.out.println();
 
