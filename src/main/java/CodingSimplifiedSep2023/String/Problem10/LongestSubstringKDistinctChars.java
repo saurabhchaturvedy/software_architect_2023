@@ -1,4 +1,4 @@
-package CodingSimplifiedSep2023.String;
+package CodingSimplifiedSep2023.String.Problem10;
 
 import java.util.HashMap;
 import java.util.Map;
