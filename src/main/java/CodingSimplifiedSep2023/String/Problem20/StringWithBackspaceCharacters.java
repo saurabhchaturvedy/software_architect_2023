@@ -1,4 +1,4 @@
-package CodingSimplifiedSep2023.String.Problem10;
+package CodingSimplifiedSep2023.String.Problem20;
 
 public class StringWithBackspaceCharacters {
 
