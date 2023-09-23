@@ -16,7 +16,7 @@ public class AnagramOfAStringInAString {
 
         Map<Character, Integer> map = new HashMap<>();
 
-        for (char c : str.toCharArray()) {
+        for (char c : pattern.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
@@ -38,7 +38,7 @@ public class AnagramOfAStringInAString {
             }
 
 
-            if (i >= str.length() - 1) {
+            if (i >= pattern.length() - 1) {
 
                 char charAtStart = str.charAt(start++);
 

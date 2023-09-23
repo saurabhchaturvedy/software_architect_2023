@@ -1,4 +1,4 @@
-package CodingSimplifiedSep2023.String.Problem10;
+package CodingSimplifiedSep2023.String.Problem20;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ public class AllAnagramsInAString {
         List<Integer> allAnagramStartingIndexes = new ArrayList<>();
         Map<Character, Integer> map = new HashMap<>();
 
-        for (char c : str.toCharArray()) {
+        for (char c : pattern.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
@@ -40,7 +40,7 @@ public class AllAnagramsInAString {
                 allAnagramStartingIndexes.add(start);
             }
 
-            if (i >= str.length() - 1) {
+            if (i >= pattern.length() - 1) {
 
                 char charAtStart = str.charAt(start++);
 
@@ -61,7 +61,7 @@ public class AllAnagramsInAString {
 
     public static void main(String[] args) {
 
-        String str = "bcdcbabcbd";
+        String str = "cbaebabacd";
         String pattern = "abc";
 
         AllAnagramsInAString allAnagramsInAString = new AllAnagramsInAString();
