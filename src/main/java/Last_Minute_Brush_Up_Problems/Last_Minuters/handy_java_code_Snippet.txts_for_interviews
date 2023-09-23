@@ -16,3 +16,9 @@ char mostFrequentChar = charFrequencyMap.entrySet().stream()
 
 List<String> list = Arrays.stream(array)
                 .collect(Collectors.toList());
+
+
+// Using Java 8 and IntStream to convert to List
+        List<Integer> intList = IntStream.of(intArray)
+                .boxed() // Convert to Integer objects
+                .collect(Collectors.toList());
