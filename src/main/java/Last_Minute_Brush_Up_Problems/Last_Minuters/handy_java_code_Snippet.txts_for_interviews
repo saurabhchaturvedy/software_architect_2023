@@ -22,3 +22,12 @@ List<String> list = Arrays.stream(array)
         List<Integer> intList = IntStream.of(intArray)
                 .boxed() // Convert to Integer objects
                 .collect(Collectors.toList());
+
+
+// Convert a List to a 2D array using Java 8
+        int numRows = listOfLists.size();
+        int numCols = listOfLists.get(0).size(); // Assuming all sublists have the same size
+
+        int[][] array2D = listOfLists.stream()
+                .map(list -> list.stream().mapToInt(Integer::intValue).toArray())
+                .toArray(int[][]::new);
