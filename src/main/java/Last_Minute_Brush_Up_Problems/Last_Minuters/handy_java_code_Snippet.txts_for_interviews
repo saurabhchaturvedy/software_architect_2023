@@ -10,3 +10,9 @@ char mostFrequentChar = charFrequencyMap.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .orElseThrow()
                 .getKey();
+
+
+// Convert an array to Collections List
+
+List<String> list = Arrays.stream(array)
+                .collect(Collectors.toList());
