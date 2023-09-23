@@ -1,0 +1,12 @@
+
+
+// Find char with maximum frequency
+
+ Map<Character, Long> charFrequencyMap = input.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+char mostFrequentChar = charFrequencyMap.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow()
+                .getKey();
