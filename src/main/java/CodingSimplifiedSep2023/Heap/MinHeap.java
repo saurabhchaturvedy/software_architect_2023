@@ -110,5 +110,7 @@ public class MinHeap {
         minHeap.display(minHeap.heap);
 
         System.out.println(" Extract min : " + minHeap.min());
+
+        minHeap.display(minHeap.heap);
     }
 }
