@@ -1,6 +1,8 @@
 package CodingSimplifiedSep2023.String.Problem20;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MostFrequentWordsAfterExcluding {
 
@@ -59,6 +61,32 @@ public class MostFrequentWordsAfterExcluding {
         String[] excludingItems = {"in", "are"};
 
         System.out.println(MostFrequentWordsAfterExcluding.mostFrequent(str, excludingItems));
+
+
+        String str1 = "Database";
+
+        Map<Character, Long> charFrequencyMap = str1.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        charFrequencyMap.forEach((key, value) -> {
+
+            System.out.println("Key : " + key + "  Value : " + value);
+        });
+
+        String input = "This is a test string. This string contains some words, and some words are repeated. Test string.";
+        // Split the input string into words and convert them to lowercase
+        String[] words = input.toLowerCase().split("\\s+");
+
+        // Create a map of word frequency
+        Map<String, Long> wordFrequencyMap = Arrays.stream(words).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        // Find the maximum frequency
+        long maxFrequency = wordFrequencyMap.values().stream().max(Long::compare).orElse(0L);
+
+        // Find all words with the maximum frequency
+        List<String> mostFrequentWords = wordFrequencyMap.entrySet().stream().filter(entry -> entry.getValue() == maxFrequency).map(Map.Entry::getKey).collect(Collectors.toList());
+
+        System.out.println(mostFrequentWords);
+
 
     }
 
