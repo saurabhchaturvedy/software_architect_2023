@@ -102,7 +102,7 @@ public class MinHeap {
 
     public static void main(String[] args) {
 
-        int[] arr = {7, 3, 8, 4, 11, 9, 13, 15, 12, 2};
+        int[] arr = {8,10,32,5};
 
         MinHeap minHeap = new MinHeap(10);
         minHeap.createHeap(arr);

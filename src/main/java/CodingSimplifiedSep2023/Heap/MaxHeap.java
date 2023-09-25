@@ -24,7 +24,7 @@ public class MaxHeap {
 
 
     public void display(int[] heap) {
-        for (int i = 1; i < heap.length; i++) {
+        for (int i = 0; i < heap.length; i++) {
             System.out.print(" " + heap[i]);
         }
         System.out.println(" ");
@@ -61,9 +61,9 @@ public class MaxHeap {
         heap[parentIndex] = temp;
     }
 
-    public int min() {
-        int min = heap[1];
-        heap[1] = heap[currentSize];
+    public int max() {
+        int min = heap[0];
+        heap[0] = heap[currentSize];
         heap[currentSize] = 0;
         sinkDown(1);
         currentSize--;
@@ -101,13 +101,13 @@ public class MaxHeap {
     }
 
     public static void main(String[] args) {
-        int[] arr = {7, 3, 8, 4, 11, 9, 13, 15, 12, 2};
+        int[] arr = {8,10,32,5};
 
-        MaxHeap maxHeap = new MaxHeap(10);
+        MaxHeap maxHeap = new MaxHeap(11);
         maxHeap.createHeap(arr);
 
         maxHeap.display(maxHeap.heap);
 
-        System.out.println(" Extract max : " + maxHeap.min());
+        System.out.println(" Extract max : " + maxHeap.max());
     }
 }
