@@ -1,6 +1,8 @@
 package CodingSimplifiedSep2023.Intervals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MergeIntervals {
@@ -12,6 +14,7 @@ public class MergeIntervals {
             return intervals;
         }
 
+        Arrays.sort(intervals, Comparator.comparing(i -> i[0]));
 
         List<int[]> intervalList = new ArrayList<>();
 
