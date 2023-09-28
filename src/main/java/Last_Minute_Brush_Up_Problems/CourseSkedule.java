@@ -58,7 +58,7 @@ public class CourseSkedule {
 
 
     public static void main(String[] args) {
-        int[][] arr = {{1, 0}, {0, 1}};
+        int[][] arr = {{1, 0}};
         CourseSkedule courseSkedule = new CourseSkedule();
         boolean canFinish = courseSkedule.canFinish(2, arr);
         System.out.println("Can the courses be finished : : ? " + canFinish);
