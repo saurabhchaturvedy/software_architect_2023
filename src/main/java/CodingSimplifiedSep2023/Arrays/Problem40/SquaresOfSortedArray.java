@@ -17,7 +17,7 @@ public class SquaresOfSortedArray {
 
         for (int k = arr.length - 1; k >= 0; k--) {
 
-            if (arr[left] >= arr[right]) {
+            if (arr[left] > arr[right]) {
 
                 result[k] = arr[left];
                 left++;
