@@ -43,13 +43,23 @@ public class UnionSortedArrays {
 
 
         while (i < first.length) {
-            union.add(first[i]);
-            i++;
+
+            if ((i < first.length - 1) && first[i] == first[i + 1]) {
+                i++;
+            } else {
+                union.add(first[i]);
+                i++;
+            }
         }
 
         while (j < second.length) {
-            union.add(second[j]);
-            j++;
+
+            if ((j < second.length - 1) && second[j] == second[j + 1]) {
+                j++;
+            } else {
+                union.add(second[j]);
+                j++;
+            }
         }
 
         return union;
