@@ -35,7 +35,7 @@ public class MergeSortedList {
     public ListNode insert(ListNode node, int data) {
 
         if (node == null) {
-            new ListNode(data);
+            return new ListNode(data);
         } else {
 
             node.next = insert(node.next, data);
@@ -76,11 +76,13 @@ public class MergeSortedList {
         root2 = mergeSortedList.insert(root2, 18);
         root2 = mergeSortedList.insert(root2, 22);
 
+        System.out.println();
 
         mergeSortedList.print(root2);
 
         ListNode mergedList = mergeSortedList.mergeSortedList(root, root2);
 
+        System.out.println();
         mergeSortedList.print(mergedList);
     }
 }
