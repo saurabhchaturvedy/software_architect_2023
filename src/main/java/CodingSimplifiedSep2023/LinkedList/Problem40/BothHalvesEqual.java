@@ -36,10 +36,8 @@ public class BothHalvesEqual {
 
         ListNode slowPtr = node;
         ListNode fastPtr = node;
-        ListNode prev = null;
 
         while (fastPtr != null && fastPtr.next != null && fastPtr.next.next != null) {
-            prev = slowPtr;
             slowPtr = slowPtr.next;
             fastPtr = fastPtr.next.next;
         }
