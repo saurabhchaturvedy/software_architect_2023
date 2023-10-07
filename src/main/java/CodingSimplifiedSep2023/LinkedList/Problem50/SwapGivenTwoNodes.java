@@ -108,7 +108,7 @@ public class SwapGivenTwoNodes {
 
         swapGivenTwoNodes.print(root);
 
-        ListNode listNode = swapGivenTwoNodes.swapGivenTwoNodes(root, 52, 63);
+        ListNode listNode = swapGivenTwoNodes.swapGivenTwoNodes(root, 15, 63);
 
         System.out.println();
 
