@@ -29,7 +29,7 @@ public class ReverseLinkedList {
     }
 
 
-    public ListNode reverse(ListNode node) {
+    public ListNode reverse(ListNode node, int k) {
 
         if (node == null && node.next == null) {
             return node;
@@ -48,8 +48,10 @@ public class ReverseLinkedList {
             current = next;
         }
 
+
         return previous;
     }
+
 
     public static void main(String[] args) {
 
@@ -58,16 +60,15 @@ public class ReverseLinkedList {
 
         ListNode root = null;
 
-        root = reverseLinkedList.insert(root, 12);
-        root = reverseLinkedList.insert(root, 32);
-        root = reverseLinkedList.insert(root, 27);
-        root = reverseLinkedList.insert(root, 19);
-        root = reverseLinkedList.insert(root, 56);
-        root = reverseLinkedList.insert(root, 78);
+        root = reverseLinkedList.insert(root, 1);
+        root = reverseLinkedList.insert(root, 2);
+        root = reverseLinkedList.insert(root, 3);
+        root = reverseLinkedList.insert(root, 4);
+        root = reverseLinkedList.insert(root, 5);
 
         reverseLinkedList.print(root);
 
-        ListNode reverse = reverseLinkedList.reverse(root);
+        ListNode reverse = reverseLinkedList.reverse(root, 2);
 
         System.out.println();
         reverseLinkedList.print(reverse);
