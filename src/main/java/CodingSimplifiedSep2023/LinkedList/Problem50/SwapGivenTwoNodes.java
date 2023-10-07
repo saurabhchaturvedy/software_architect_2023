@@ -55,16 +55,16 @@ public class SwapGivenTwoNodes {
             current = current.next;
         }
 
-        ListNode current2 = node;
+        current = node;
 
-        while (current2 != null) {
-            if (current2.data == val2) {
-                t2 = current2;
+        while (current != null) {
+            if (current.data == val2) {
+                t2 = current;
                 break;
             }
 
-            prev2 = current2;
-            current2 = current2.next;
+            prev2 = current;
+            current = current.next;
         }
 
 
