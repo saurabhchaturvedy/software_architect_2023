@@ -5,9 +5,6 @@ import CodingSimplifiedSep2023.LinkedList.ListNode;
 public class SplitListAlternatively {
 
 
-    ListNode first;
-    ListNode second;
-
     public ListNode insert(ListNode node, int data) {
 
         if (node == null) {
@@ -50,33 +47,47 @@ public class SplitListAlternatively {
     }
 
 
-    public void splitListsAlternatively(ListNode node) {
+    public void splitListAlternatively(ListNode node) {
+
         if (node == null || node.next == null) {
             return;
         }
 
-        first = node;
-        second = node.next;
-        ListNode firstTemp = first;
-        ListNode secondTemp = second;
 
-        node = node.next.next;
+        ListNode list1 = new ListNode(-1);
+        ListNode list2 = new ListNode(-2);
 
-        while (node != null && node.next != null) {
+        ListNode current1 = list1;
+        ListNode current2 = list2;
 
-            firstTemp.next = node;
-            secondTemp.next = node.next;
+        ListNode current = node;
 
-            firstTemp = firstTemp.next;
-            secondTemp = secondTemp.next;
+        int count = 0;
+
+        while (current != null) {
+
+            if (count % 2 == 0) {
+
+                current1.next = current;
+                current1 = current1.next;
+            } else {
+
+                current2.next = current;
+                current2 = current2.next;
+            }
+
+            current = current.next;
+            count++;
+
         }
 
-        if (node != null) {
-            firstTemp.next = node;
-            firstTemp = firstTemp.next;
-        }
 
-        return;
+        current1.next = null;
+        current2.next = null;
+
+        print(list1.next);
+        System.out.println();
+        print(list2.next);
     }
 
     public static void main(String[] args) {
@@ -85,22 +96,19 @@ public class SplitListAlternatively {
 
         ListNode root = null;
 
-        root = splitListAlternatively.insert(root,23);
-        root = splitListAlternatively.insert(root,18);
-        root = splitListAlternatively.insert(root,52);
-        root = splitListAlternatively.insert(root,36);
-        root = splitListAlternatively.insert(root,66);
-        root = splitListAlternatively.insert(root,82);
-        root = splitListAlternatively.insert(root,27);
+        root = splitListAlternatively.insert(root, 56);
+        root = splitListAlternatively.insert(root, 7);
+        root = splitListAlternatively.insert(root, 18);
+        root = splitListAlternatively.insert(root, 27);
+        root = splitListAlternatively.insert(root, 17);
+        root = splitListAlternatively.insert(root, 78);
+        root = splitListAlternatively.insert(root, 31);
+
 
         splitListAlternatively.print(root);
 
         System.out.println();
 
-        splitListAlternatively.splitListsAlternatively(root);
-
-        splitListAlternatively.print(splitListAlternatively.first);
-        System.out.println();
-        splitListAlternatively.print(splitListAlternatively.second);
+        splitListAlternatively.splitListAlternatively(root);
     }
 }
