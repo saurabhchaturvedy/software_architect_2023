@@ -5,9 +5,6 @@ import CodingSimplifiedSep2023.LinkedList.ListNode;
 public class MergeTwoLinkedListAlternatively {
 
 
-    ListNode first;
-    ListNode second;
-
     public ListNode insert(ListNode node, int data) {
 
         if (node == null) {
@@ -50,55 +47,71 @@ public class MergeTwoLinkedListAlternatively {
     }
 
 
-    public void mergeTwoLinkedListAlternatively(ListNode node1, ListNode node2) {
+    public ListNode mergeTwoLinkedListAlternatively(ListNode node1, ListNode node2) {
 
-        first = node1;
-        second = node2;
+        if (node1 == null) {
+            return node2;
+        }
 
-        ListNode node1next = null;
-        ListNode node2next = null;
-
-        while (node1 != null && node2 != null) {
-
-            node1next = node1.next;
-            node1.next = node2;
-            node1 = node1next;
-
-            node2next = node2.next;
-            node2.next = node1next;
-            node2 = node2next;
+        if (node2 == null) {
+            return node1;
         }
 
 
-        second = node2;
+        ListNode mergedHead = new ListNode(-1);
+        ListNode current = mergedHead;
+        boolean useList = true;
 
+        while (node1 != null && node2 != null) {
+            if (useList) {
+                current.next = node1;
+                node1 = node1.next;
+            } else {
+
+                current.next = node2;
+                node2 = node2.next;
+            }
+
+            current = current.next;
+            useList = !useList;
+        }
+
+        if (node1 != null) {
+            current.next = node1;
+        }
+
+        if (node2 != null) {
+            current.next = node2;
+        }
+
+        return mergedHead.next;
     }
 
     public static void main(String[] args) {
 
-
         MergeTwoLinkedListAlternatively mergeTwoLinkedListAlternatively = new MergeTwoLinkedListAlternatively();
 
-        ListNode node1 = null;
+        ListNode head1 = null;
 
-        node1 = mergeTwoLinkedListAlternatively.insert(node1, 12);
-        node1 = mergeTwoLinkedListAlternatively.insert(node1, 99);
-        node1 = mergeTwoLinkedListAlternatively.insert(node1, 8);
-        node1 = mergeTwoLinkedListAlternatively.insert(node1, 39);
+        head1 = mergeTwoLinkedListAlternatively.insert(head1, 12);
+        head1 = mergeTwoLinkedListAlternatively.insert(head1, 99);
+        head1 = mergeTwoLinkedListAlternatively.insert(head1, 8);
+        head1 = mergeTwoLinkedListAlternatively.insert(head1, 39);
 
-        ListNode node2 = null;
-
-        node2 = mergeTwoLinkedListAlternatively.insert(node2, 5);
-        node2 = mergeTwoLinkedListAlternatively.insert(node2, 70);
-
-        mergeTwoLinkedListAlternatively.print(node1);
+        mergeTwoLinkedListAlternatively.print(head1);
         System.out.println();
-        mergeTwoLinkedListAlternatively.print(node2);
 
-        mergeTwoLinkedListAlternatively.mergeTwoLinkedListAlternatively(node1, node2);
+        ListNode head2 = null;
+
+        head2 = mergeTwoLinkedListAlternatively.insert(head2, 5);
+        head2 = mergeTwoLinkedListAlternatively.insert(head2, 70);
+
+        mergeTwoLinkedListAlternatively.print(head2);
+
+        ListNode listNode = mergeTwoLinkedListAlternatively.mergeTwoLinkedListAlternatively(head1, head2);
 
         System.out.println();
-        mergeTwoLinkedListAlternatively.print(mergeTwoLinkedListAlternatively.first);
-        mergeTwoLinkedListAlternatively.print(mergeTwoLinkedListAlternatively.second);
+
+        mergeTwoLinkedListAlternatively.print(listNode);
     }
 }
