@@ -30,16 +30,12 @@ public class SwapNodesPairwise {
 
 
     public ListNode swapNodesPairwise(ListNode node) {
-        if (node == null && node.next == null) {
-            return node;
-        }
-
         ListNode dummy = new ListNode(-1);
         dummy.next = node;
 
         ListNode current = dummy;
 
-        while (current != null && current.next.next != null) {
+        while (current.next != null && current.next.next != null) {
 
             ListNode first = current.next;
             ListNode second = current.next.next;
@@ -51,6 +47,7 @@ public class SwapNodesPairwise {
 
         return dummy.next;
     }
+
 
     public static void main(String[] args) {
 
