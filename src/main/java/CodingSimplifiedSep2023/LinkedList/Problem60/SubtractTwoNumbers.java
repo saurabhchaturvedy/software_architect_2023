@@ -104,14 +104,14 @@ public class SubtractTwoNumbers {
             current.next = first;
         }
         ListNode result = dummyNode.next;
-
+        result = reverse(result);
         // remove trailing zeroes from the subtraction result
         while (result != null && result.data == 0) {
             result = result.next;
         }
 
 
-        return reverse(result);
+        return result;
 
     }
 
@@ -124,8 +124,10 @@ public class SubtractTwoNumbers {
         ListNode head1 = null;
 
         head1 = subtractTwoNumbers.insert(head1, 1);
-        head1 = subtractTwoNumbers.insert(head1, 4);
-        head1 = subtractTwoNumbers.insert(head1, 8);
+        head1 = subtractTwoNumbers.insert(head1, 0);
+        head1 = subtractTwoNumbers.insert(head1, 0);
+        head1 = subtractTwoNumbers.insert(head1, 0);
+        head1 = subtractTwoNumbers.insert(head1, 0);
 
 
         subtractTwoNumbers.print(head1);
@@ -133,8 +135,10 @@ public class SubtractTwoNumbers {
 
         ListNode head2 = null;
 
-        head2 = subtractTwoNumbers.insert(head2, 5);
         head2 = subtractTwoNumbers.insert(head2, 6);
+        head2 = subtractTwoNumbers.insert(head2, 6);
+        head2 = subtractTwoNumbers.insert(head2, 0);
+        head2 = subtractTwoNumbers.insert(head2, 0);
 
 
         subtractTwoNumbers.print(head2);
