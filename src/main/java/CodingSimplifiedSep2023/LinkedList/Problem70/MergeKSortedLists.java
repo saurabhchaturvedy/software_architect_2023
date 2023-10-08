@@ -139,12 +139,12 @@ public class MergeKSortedLists {
         head5 = mergeKSortedLists.insert(head5, 20);
         head5 = mergeKSortedLists.insert(head5, 21);
 
-        ListNode[] sortedLists = new ListNode[5];
+        ListNode[] sortedLists = new ListNode[3];
         sortedLists[0] = head1;
         sortedLists[1] = head2;
         sortedLists[2] = head3;
-        sortedLists[3] = head4;
-        sortedLists[4] = head5;
+      //  sortedLists[3] = head4;
+      //  sortedLists[4] = head5;
 
         ListNode listNode = mergeKSortedLists.mergeKSortedLists(sortedLists, sortedLists.length - 1);
 
