@@ -45,7 +45,7 @@ public class AddTwoNumbersRecursive {
         int y = (second != null) ? second.data : 0;
 
         int sum = x + y + carry;
-
+        carry = sum/10;
         ListNode result = new ListNode(sum % 10);
 
         if (first != null) {
