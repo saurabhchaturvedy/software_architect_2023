@@ -75,7 +75,7 @@ public class AddTwoNumbers {
 
         first = reverse(first);
         second = reverse(second);
-        while (first != null && second != null) {
+        while (first != null || second != null) {
 
             int x = (first != null) ? first.data : 0;
             int y = (second != null) ? second.data : 0;

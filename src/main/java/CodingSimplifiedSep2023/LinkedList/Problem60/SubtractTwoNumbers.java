@@ -74,7 +74,7 @@ public class SubtractTwoNumbers {
         int borrow = 0;
         first = reverse(first);
         second = reverse(second);
-        while (first != null && second != null) {
+        while (first != null || second != null) {
 
             int x = first != null ? first.data - borrow : 0;
             int y = second != null ? second.data : 0;
@@ -106,9 +106,9 @@ public class SubtractTwoNumbers {
         ListNode result = dummyNode.next;
 
         // remove trailing zeroes from the subtraction result
-//        while (result != null && result.data == 0) {
-//            result = result.next;
-//        }
+        while (result != null && result.data == 0) {
+            result = result.next;
+        }
 
 
         return reverse(result);
@@ -126,8 +126,7 @@ public class SubtractTwoNumbers {
         head1 = subtractTwoNumbers.insert(head1, 1);
         head1 = subtractTwoNumbers.insert(head1, 4);
         head1 = subtractTwoNumbers.insert(head1, 8);
-        head1 = subtractTwoNumbers.insert(head1, 3);
-        head1 = subtractTwoNumbers.insert(head1, 2);
+
 
         subtractTwoNumbers.print(head1);
         System.out.println();
@@ -136,8 +135,7 @@ public class SubtractTwoNumbers {
 
         head2 = subtractTwoNumbers.insert(head2, 5);
         head2 = subtractTwoNumbers.insert(head2, 6);
-        head2 = subtractTwoNumbers.insert(head2, 3);
-        head2 = subtractTwoNumbers.insert(head2, 0);
+
 
         subtractTwoNumbers.print(head2);
         System.out.println();
